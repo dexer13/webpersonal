@@ -1,0 +1,27 @@
+
+{% extends 'core/base.html' %}
+{% block background %}{% load static %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
+{% block header %}
+    <h1>Contacto</h1>
+    <span class="subheading">Asesoría</span>
+{% endblock %}
+{% block contenido %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <br>
+          <p><b>Gmail:</b> deniseduardoisidrogonzalez@gmail.com</p>
+          <p><b>outlook:</b> xer131@hotmail.com</p>
+          <p><b>Facebook:</b>
+              <a href="{{ user.informacionpersonal.link_facebook }}">{{ user.informacionpersonal.link_facebook }}</a></p>
+          <p><b>Instagram:</b>
+              <a href="{{ user.informacionpersonal.link_instagram }}">{{ user.informacionpersonal.link_instagram }}</a></p>
+          <p><b>github:</b>
+              <a href="{{ user.informacionpersonal.link_github }}">{{user.informacionpersonal.link_github }}</a></p>
+        </div>
+      </div>
+    </div>
+{% endblock contenido %}
+{% block titulo %}
+    Contacto
+{% endblock titulo%}

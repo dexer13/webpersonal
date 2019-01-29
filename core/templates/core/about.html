@@ -1,0 +1,27 @@
+
+{% extends 'core/base.html' %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.png' %}{% endblock %}
+{% block header %}
+    <h1>Acerca de</h1>
+    <span class="subheading">Biografía</span>
+{% endblock %}
+{% block titulo %}
+    acerca de
+{% endblock titulo%}
+{% block contenido %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+          <img class="img-fluid avatar" src="{% if user.informacionpersonal.foto %} {{ user.informacionpersonal.foto.url }}{% else %}{% static 'core/img/avatar.jpg' %}{% endif %}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+          <h2 class="section-heading">Denis González</h2>
+            {{ user.informacionpersonal.descripcion|safe }}<br>
+            {{ user.informacionpersonal.hab_blandas|safe }}<br>
+            {{ user.informacionpersonal.hab_tecnicas|safe }}
+        </div>
+      </div>
+    </div>
+
+
+{% endblock contenido %}
